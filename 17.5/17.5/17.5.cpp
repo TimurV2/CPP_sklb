@@ -1,17 +1,20 @@
 #include <iostream>
-#include <vector>
 #include "vector_class.h"
 
 using namespace std;
 
 int main()
 {
-    vector<int> my_vec = { 1,2,3,4,5,6 };
+	int x, y, z;
+	cout << "Enter vectors coordinates -> ";
+	cin >> x >> y >> z;
 
-    vector_class test(my_vec);
+	vector<int> my_vec = { x,y,z };
+	vector_class cl_vec(my_vec);
 
-    test.get_vec_len();
-    test.get_info();
+	cl_vec.get_vec_len();
+
+	return 0;
 }
 
 
