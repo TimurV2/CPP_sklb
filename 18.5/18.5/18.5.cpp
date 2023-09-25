@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Player_cl.h"
+#include "player_class.h"
 
 using namespace std;
 
