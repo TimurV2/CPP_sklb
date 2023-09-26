@@ -13,6 +13,9 @@ int main()
 	vector_class cl_vec(my_vec);
 
 	cl_vec.get_vec_len();
+	cl_vec.get_x();
+	cl_vec.get_y();
+	cl_vec.get_z();
 
 	return 0;
 }

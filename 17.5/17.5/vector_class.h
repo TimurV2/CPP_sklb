@@ -20,17 +20,17 @@ public:
 
 	void get_x() 
 	{
-		this->private_vec[0];
+		cout << this->private_vec[0] << "\n";
 	}
 
 	void get_y() 
 	{
-		this->private_vec[1];
+		cout << this->private_vec[1] << "\n";
 	}
 
 	void get_z() 
 	{
-		this->private_vec[2];
+		cout << this->private_vec[2] << "\n";
 	}
 
 	void get_vec_len()
