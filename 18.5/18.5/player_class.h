@@ -45,9 +45,21 @@ public:
 		this->player_name = name;
 	}
 
-	static void PlayerSort(player_class& players, size_t player_count)
+	static void PlayerSort(player_class* players, size_t player_count)
 	{
-
+		player_class tmp_plr;
+		for (int i = 0; i < player_count; i++)
+		{
+			for (int j = i + 1; j < player_count; j++)
+			{
+				if (players[i].GetScore() < players[j].GetScore())
+				{
+					tmp_plr = players[i];
+					players[i] = players[j];
+					players[j] = tmp_plr;
+				}
+			}
+		}
 	}
 };
 

@@ -3,6 +3,13 @@
 
 using namespace std;
 
+void show_players(player_class* players, int num_plrs) 
+{
+    for (int i = 0; i < num_plrs; i++)
+    {
+        cout << players[i].GetName() << "\t:\t" << players[i].GetScore() << "\n";
+    }
+};
 
 int main()
 {
@@ -11,7 +18,6 @@ int main()
     cin >> num_players;
 
     player_class* players = new player_class[num_players];
-    player_class tmp_player;
     // player_class::PlayerSort(*players, num_players);
 
     string tmp_name;
@@ -27,24 +33,10 @@ int main()
         players[i].Set_Values(tmp_score, tmp_name);
         cout << "\n";
     }
-    
-    for (int i = 0; i < num_players; i++) 
-    {
-        for (int j = i + 1; j < num_players; j++) 
-        {
-            if (players[i].GetScore() < players[j].GetScore())
-            {
-                tmp_player = players[i];
-                players[i] = players[j];
-                players[j] = tmp_player;
-            }
-        }
-    }
 
-    for (int i = 0; i < num_players; i++) 
-    {
-        cout << players[i].GetName() << "\t:\t" << players[i].GetScore() << "\n";
-    }
+    player_class::PlayerSort(players, num_players);
+
+    show_players(players, num_players);
 
     delete[] players;
 
