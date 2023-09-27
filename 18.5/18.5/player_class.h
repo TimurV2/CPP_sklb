@@ -1,35 +1,53 @@
 #pragma once
-#include <string>
 #include <iostream>
+#include <string>
+#include <stdlib.h>
+
+using namespace std;
+	
 
 class player_class
 {
 private:
 
-	int size_arr;
-	//string *arr_name_plr;
-	int* arr_score_plr;
+	string random_name[10] = { "budz", "pain", "konan", "nagato", "itachi", "tobi", "madara", "naruto", "danzou", "kakashi" };
+	int player_score;
+	string player_name;
 
 public:
+
+	void Set_Values(int score, string name) 
+	{
+		this->player_name = name;
+		this->player_score = score;
+	}
 	
-	player_class(int num_of_players) // Конструктор создания экземлпяра класса с массивами имен и счета игроков
-	{
-		this->size_arr = num_of_players;
-		//arr_name_plr = new string[num_of_players];
-		arr_score_plr = new int[num_of_players];
-		player_data_input(num_of_players);
+	int GetScore()  
+	{ 
+		return this->player_score;
 	}
 
-	void player_data_input(int num_of_players) // Метод класса для ввода данных в массивы имен и счета игрков
+	string GetName()
+	{ 
+		return this->player_name;
+	}
+	
+	player_class() //random class value 
 	{
-		for (int x = 0; x < num_of_players; x++)
-		{
-			for (int y = 0; y < num_of_players; y++)
-			{
-
-			}
-		}
+		int srand(time(NULL));
+		this->player_name = random_name[rand() % 10];
+		this->player_score = rand() % 10000 + 1;
 	}
 
+	player_class(int score, string name) //default class constructor
+	{
+		this->player_score = score;
+		this->player_name = name;
+	}
+
+	static void PlayerSort(player_class& players, size_t player_count)
+	{
+
+	}
 };
 
