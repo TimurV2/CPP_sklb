@@ -31,6 +31,8 @@ public:
 	{ 
 		return this->player_name;
 	}
+
+
 	
 	player_class() //random class value 
 	{
